@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GuilTeach — Aprende sobre el audio</title>
+  <meta name="description" content="Colección de micrositios GuilTeach para aprender sobre el audio: ondas, fase, conversiones y más." />
+  <style>
+    :root{
+      --bg:#0b0f14; --ink:#f2f4fa; --muted:#9aa6be; --card:#101726; --accent:#7aa2ff;
+      --shadow:0 10px 28px rgba(0,0,0,.4); --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:sans-serif; background:var(--bg); color:var(--ink);
+      line-height:1.4; padding:30px; display:flex; flex-direction:column; align-items:center;
+    }
+    h1{margin:0 0 10px; font-size:28px}
+    p{margin:0 0 30px; color:var(--muted)}
+    .grid{
+      display:grid; gap:20px; width:100%; max-width:900px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    }
+    .card{
+      background:var(--card); padding:20px; border-radius:var(--radius);
+      text-decoration:none; color:inherit; box-shadow:var(--shadow);
+      transition:.2s;
+      display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .card:hover{transform:translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.6)}
+    .title{font-size:18px; font-weight:600; margin-bottom:8px}
+    .desc{font-size:14px; color:var(--muted)}
+    footer{margin-top:40px; font-size:12px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <h1>GuilTeach</h1>
+  <p>Aprende sobre el audio a través de micrositios interactivos</p>
+
+  <div class="grid">
+    <a class="card" href="https://onda-pi.vercel.app/" target="_blank">
+      <div class="title">Onda π</div>
+      <div class="desc">Visualizador de ondas y senoides.</div>
+    </a>
+
+    <a class="card" href="https://fase-opal.vercel.app/" target="_blank">
+      <div class="title">Fase</div>
+      <div class="desc">Explora sumas, desfases y cancelación.</div>
+    </a>
+
+    <a class="card" href="https://adconversions-delta.vercel.app/" target="_blank">
+      <div class="title">Conversión</div>
+      <div class="desc">Muestreo, bits y formatos digitales.</div>
+    </a>
+  </div>
+
+  <footer>
+    © <span id="yr"></span> GuilTeach — Aprende sobre el audio
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
