@@ -36,6 +36,9 @@
     .modal-close:hover{background:#f0f0f0;color:#333;}
     .tool-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;list-style:none;}
     .tool-item a{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;background:#f5f8ff;border:1.5px solid #d0e0f8;border-radius:12px;text-decoration:none;color:#1a3a6e;font-size:14px;font-weight:600;transition:all .15s ease;gap:8px;-webkit-tap-highlight-color:transparent;}
+    .tool-info{display:flex;flex-direction:column;gap:1px;}
+    .tool-name{font-weight:600;}
+    .tool-desc{font-size:11px;color:#5a7a9a;font-weight:400;line-height:1.3;opacity:0.9;}
     .tool-item a:hover,.tool-item a:focus{background:#e0edff;border-color:#5090e0;transform:translateY(-2px);box-shadow:0 4px 12px rgba(60,110,200,0.15);}
     .tool-item a:active{transform:scale(0.97);}
     .tool-item a .arrow{color:#5090e0;font-size:16px;flex-shrink:0;}
@@ -102,6 +105,31 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
     const BASE = 'https://guil-collab.github.io/web-guilteach';
+    
+    const DESCS = {
+      'Curvas NC y NR': 'Evalúa el ruido de fondo de un espacio',
+      'Modos de Resonancia': 'Frecuencias resonantes de una sala rectangular',
+      'Configuraciones de Subwoofer': 'Compara distintas disposiciones de subwoofers',
+      'Crossovers': 'Simula filtros de cruce entre graves y agudos',
+      'Curva de Fase II': 'Visualiza la curva de fase de un sistema',
+      'curva de fase I': 'Análisis de fase en función de la frecuencia',
+      'Filtro Peine': 'Efecto de cancelación por reflexión tardía',
+      'Ordenes de Filtros': 'Compara filtros por pendiente y orden',
+      'Suma de dos Fuentes identicas': 'Interacción entre dos fuentes de sonido iguales',
+      'Tabla Desfase por Delay': 'Desfase en grados según tiempo de retardo',
+      'Atomo y Movimiendo armónico Simple': 'MAS: la base del movimiento oscilatorio',
+      'Atomos y Onda I': 'Vibración atómica y propagación de onda (I)',
+      'Atomos y Onda II': 'Vibración atómica y propagación de onda (II)',
+      'Fase y Grados ': 'Relación visual entre fase y grados de una onda',
+      'Onda 2 Armónicos': 'Superposición de dos componentes armónicos',
+      'Onda 3 Armónicos': 'Superposición de tres componentes armónicos',
+      'Visualizador de Desfases': 'Efecto visual del desfase entre dos ondas',
+      'Asistente para Pinchar Con Vinilo': 'Herramienta para sincronizar con vinilo analógico',
+      'Calculadora Transpocción de Samples': 'Transpone samples según el ajuste de pitch',
+      'Calculadora Transposición de Samples': 'Transpone samples según el ajuste de pitch',
+      'Rueda de Camelot': 'Compatibilidad de tonalidades para mezclas armónicas',
+      'Ejercicios de Amplificar de Potencia': 'Dimensiona amplificadores según la carga',
+    };
     const CATS = {
       acustica:{ label:'Acústica Arquitectónica', folder:'Acústica Arquitectónica', tools:['Curvas NC y NR','Modos de Resonancia'] },
       ajustes:{ label:'Ajuste y Calibración de Equipos de Audio', folder:'Ajuste y Calibración de Equipos de Audio', tools:['Configuraciones de Subwoofer','Crossovers','Curva de Fase II','curva de fase I','Filtro Peine','Ordenes de Filtros','Suma de dos Fuentes identicas','Tabla Desfase por Delay'] },
@@ -114,7 +142,7 @@
       document.getElementById('modalTitle').textContent=cat.label;
       document.getElementById('toolList').innerHTML=cat.tools.map(t=>{
         const url=BASE+'/'+encodeURIComponent(cat.folder)+'/'+encodeURIComponent(t)+'.html';
-        return '<li class="tool-item"><a href="'+url+'" target="_self"><span>'+t+'</span><span class="arrow">↗</span></a></li>';
+        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">'+t+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
       }).join('');
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow='hidden';
