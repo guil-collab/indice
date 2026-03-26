@@ -157,7 +157,7 @@
       document.getElementById('modalTitle').textContent=cat.label;
       document.getElementById('toolList').innerHTML=cat.tools.map(t=>{
         const url=BASE+'/'+encodeURIComponent(cat.folder)+'/'+encodeURIComponent(t)+'.html';
-        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">+(DISPLAY_NAMES[t]||t)+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
+        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">'+(DISPLAY_NAMES[t]||t)+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
       }).join('');
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow='hidden';
