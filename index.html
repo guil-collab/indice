@@ -104,60 +104,45 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
     const BASE = 'https://guil-collab.github.io/web-guilteach';
-    
-    
-    const DISPLAY_NAMES = {
-      'curva de fase I': 'Curva de Fase I',
-      'Curva de Fase II': 'Curva de Fase II',
-      'Atomo y Movimiendo armónico Simple': 'Átomo y Movimiento Armónico Simple',
-      'Atomos y Onda I': 'Átomos y Onda — Parte I',
-      'Atomos y Onda II': 'Átomos y Onda — Parte II',
-      'Fase y Grados ': 'Fase y Grados',
-      'Onda 2 Armónicos': 'Onda con 2 Armónicos',
-      'Onda 3 Armónicos': 'Onda con 3 Armónicos',
-      'Ordenes de Filtros': 'Órdenes de Filtros',
-      'Suma de dos Fuentes identicas': 'Suma de dos Fuentes Idénticas',
-      'Calculadora Transpocción de Samples': 'Calculadora de Transposición de Samples',
-      'Asistente para Pinchar Con Vinilo': 'Asistente para Pinchar con Vinilo',
-      'Ejercicios de Amplificar de Potencia': 'Cálculos de Amplificación de Potencia',
-    };
-    const DESCS = {
-      'Curvas NC y NR': 'Evalúa el ruido de fondo de un espacio',
-      'Modos de Resonancia': 'Frecuencias resonantes de una sala rectangular',
-      'Configuraciones de Subwoofer': 'Compara distintas disposiciones de subwoofers',
-      'Crossovers': 'Simula filtros de cruce entre graves y agudos',
-      'Curva de Fase II': 'Visualiza la curva de fase de un sistema',
-      'curva de fase I': 'Análisis de fase en función de la frecuencia',
-      'Filtro Peine': 'Efecto de cancelación por reflexión tardía',
-      'Ordenes de Filtros': 'Compara filtros por pendiente y orden',
-      'Suma de dos Fuentes identicas': 'Interacción entre dos fuentes de sonido iguales',
-      'Tabla Desfase por Delay': 'Desfase en grados según tiempo de retardo',
-      'Atomo y Movimiendo armónico Simple': 'MAS: la base del movimiento oscilatorio',
-      'Atomos y Onda I': 'Vibración atómica y propagación de onda (I)',
-      'Atomos y Onda II': 'Vibración atómica y propagación de onda (II)',
-      'Fase y Grados ': 'Relación visual entre fase y grados de una onda',
-      'Onda 2 Armónicos': 'Superposición de dos componentes armónicos',
-      'Onda 3 Armónicos': 'Superposición de tres componentes armónicos',
-      'Visualizador de Desfases': 'Efecto visual del desfase entre dos ondas',
-      'Asistente para Pinchar Con Vinilo': 'Herramienta para sincronizar con vinilo analógico',
-      'Calculadora Transpocción de Samples': 'Transpone samples según el ajuste de pitch',
-      'Calculadora Transposición de Samples': 'Transpone samples según el ajuste de pitch',
-      'Rueda de Camelot': 'Compatibilidad de tonalidades para mezclas armónicas',
-      'Ejercicios de Amplificar de Potencia': 'Dimensiona amplificadores según la carga',
-    };
     const CATS = {
-      acustica:{ label:'Acústica Arquitectónica', folder:'Acústica Arquitectónica', tools:['Curvas NC y NR','Modos de Resonancia'] },
-      ajustes:{ label:'Ajuste y Calibración de Equipos de Audio', folder:'Ajuste y Calibración de Equipos de Audio', tools:['Configuraciones de Subwoofer','Crossovers','Curva de Fase II','curva de fase I','Filtro Peine','Ordenes de Filtros','Suma de dos Fuentes identicas','Tabla Desfase por Delay'] },
-      fundamentos:{ label:'Fundamentos y Física del Sonido', folder:'Fundamentos del sonido', tools:['Atomo y Movimiendo armónico Simple','Atomos y Onda I','Atomos y Onda II','Fase y Grados ','Onda 2 Armónicos','Onda 3 Armónicos','Visualizador de Desfases'] },
-      djs:{ label:"Herramientas para DJ's", folder:"Herramientas para DJ´s", tools:['Asistente para Pinchar Con Vinilo','Calculadora Transpoción de Samples','Rueda de Camelot'] },
-      instalaciones:{ label:'Instalaciones de Equipos de Sonido', folder:'Instalaciones de Equipos de Sonido', tools:['Ejercicios de Amplificar de Potencia'] }
+      acustica:{label:'Acústica Arquitectónica',folder:'Acústica Arquitectónica',tools:[
+        {file:'Curvas NC y NR',name:'Curvas NC y NR',desc:'Evalúa el nivel de ruido de fondo de un espacio'},
+        {file:'Modos de Resonancia',name:'Modos de Resonancia',desc:'Calcula frecuencias resonantes de una sala rectangular'}
+      ]},
+      ajustes:{label:'Ajuste y Calibración de Equipos de Audio',folder:'Ajustes de Equipos de Sonido',tools:[
+        {file:'Configuraciones de Subwoofer',name:'Configuraciones de Subwoofer',desc:'Compara distintas disposiciones de subwoofers'},
+        {file:'Crossovers',name:'Crossovers',desc:'Simula filtros de cruce entre graves y agudos'},
+        {file:'curva de fase I',name:'Curva de Fase — Parte I',desc:'Análisis de fase en función de la frecuencia'},
+        {file:'Curva de Fase II',name:'Curva de Fase — Parte II',desc:'Visualiza la curva de fase de un sistema completo'},
+        {file:'Filtro Peine',name:'Filtro Peine',desc:'Efecto de cancelación por reflexión tardía'},
+        {file:'Ordenes de Filtros',name:'Órdenes de Filtros',desc:'Compara filtros por pendiente y orden'},
+        {file:'Suma de dos Fuentes identicas',name:'Suma de dos Fuentes Idénticas',desc:'Interacción entre dos fuentes de sonido iguales'},
+        {file:'Tabla Desfase por Delay',name:'Tabla Desfase por Delay',desc:'Desfase en grados según tiempo de retardo'}
+      ]},
+      fundamentos:{label:'Fundamentos y Física del Sonido',folder:'Fundamentos del sonido',tools:[
+        {file:'Atomo y Movimiendo armónico Simple',name:'Átomo y Movimiento Armónico Simple',desc:'MAS: la base del movimiento oscilatorio'},
+        {file:'Atomos y Onda I',name:'Átomos y Onda — Parte I',desc:'Vibración atómica y propagación de onda'},
+        {file:'Atomos y Onda II',name:'Átomos y Onda — Parte II',desc:'Vibración atómica y propagación de onda (versión ampliada)'},
+        {file:'Fase y Grados ',name:'Fase y Grados',desc:'Relación visual entre fase y grados de una onda'},
+        {file:'Onda 2 Armónicos',name:'Síntesis con 2 Armónicos',desc:'Superposición de dos componentes armónicos'},
+        {file:'Onda 3 Armónicos',name:'Síntesis con 3 Armónicos',desc:'Superposición de tres componentes armónicos'},
+        {file:'Visualizador de Desfases',name:'Visualizador de Desfases',desc:'Efecto visual del desfase entre dos ondas'}
+      ]},
+      djs:{label:"Herramientas para DJ's",folder:'Instalaciones de Equipos de Sonido',tools:[
+        {file:'Asistente para Pinchar Con Vinilo',name:'Asistente para Pinchar con Vinilo',desc:'Herramienta para sincronizar con vinilo analógico'},
+        {file:'Calculadora Transpoción de Samples',name:'Calculadora de Transposición de Samples',desc:'Transpone samples según el ajuste de pitch'},
+        {file:'Rueda de Camelot',name:'Rueda de Camelot',desc:'Compatibilidad de tonalidades para mezclas armónicas'}
+      ]},
+      instalaciones:{label:'Instalaciones de Equipos de Sonido',folder:'Instalaciones de Equipos de Sonido',tools:[
+        {file:'Ejercicios de Amplificar de Potencia',name:'Cálculos de Amplificación de Potencia',desc:'Dimensiona amplificadores según la carga'}
+      ]}
     };
     function openModal(id){
       const cat=CATS[id];
       document.getElementById('modalTitle').textContent=cat.label;
       document.getElementById('toolList').innerHTML=cat.tools.map(t=>{
-        const url=BASE+'/'+encodeURIComponent(cat.folder)+'/'+encodeURIComponent(t)+'.html';
-        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">'+(DISPLAY_NAMES[t]||t)+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
+        const url=BASE+'/'+encodeURIComponent(cat.folder)+'/'+encodeURIComponent(t.file)+'.html';
+        return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">'+t.name+'</span>'+(t.desc?'<span class="tool-desc">'+t.desc+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
       }).join('');
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow='hidden';
