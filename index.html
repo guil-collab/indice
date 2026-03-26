@@ -21,7 +21,6 @@
     .folder-btn:active{transform:scale(0.96);}
     .folder-icon{width:clamp(90px,15vw,120px);height:auto;filter:drop-shadow(0 4px 10px rgba(60,110,180,0.25));}
     .folder-label{font-family:'Caveat',cursive;font-size:clamp(18px,3.5vw,22px);font-weight:700;color:#111;text-align:center;max-width:140px;line-height:1.25;text-shadow:0 1px 4px rgba(255,255,255,0.85);}
-    .folder-desc{font-family:'Caveat',cursive;font-size:clamp(11px,2.2vw,13px);color:#222;text-align:center;max-width:140px;line-height:1.3;margin-top:3px;opacity:0.78;font-weight:500;}
     footer{position:fixed;bottom:0;width:100%;text-align:center;padding:12px;font-size:12px;color:#444;font-weight:600;background:rgba(245,240,232,0.75);backdrop-filter:blur(4px);}
 
     /* ── Modal centrado ── */
@@ -49,7 +48,7 @@
       .folders{gap:16px;}
       .folder-btn{padding:4px;}
       .folder-icon{width:80px;}
-      .folder-label{font-size:15px;max-width:120px;color:#111;}.folder-desc{font-size:10px;max-width:120px;}
+      .folder-label{font-size:22px;max-width:140px;color:#000;font-weight:900;line-height:1.2;text-shadow:0 1px 6px rgba(255,255,255,0.95);}
       .modal-panel{padding:20px 16px 28px;border-radius:16px;}
       .tool-list{grid-template-columns:1fr 1fr;}
       .tool-item a{padding:11px 10px;font-size:13px;}
@@ -71,23 +70,23 @@
       <div class="folders">
         <button class="folder-btn" onclick="openModal('acustica')">
           <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1a" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#a8d8f0"/><stop offset="100%" style="stop-color:#6aafe0"/></linearGradient><linearGradient id="g1b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#88c4ec"/><stop offset="100%" style="stop-color:#4e96cc"/></linearGradient></defs><path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g1a)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g1b)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/></svg>
-          <span class="folder-label">Acústica Arquitectónica</span><span class="folder-desc">Ruido ambiental, resonancias y respuesta de salas</span>
+          <span class="folder-label">Acústica Arquitectónica</span>
         </button>
         <button class="folder-btn" onclick="openModal('ajustes')">
           <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2a" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#a8d8f0"/><stop offset="100%" style="stop-color:#6aafe0"/></linearGradient><linearGradient id="g2b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#88c4ec"/><stop offset="100%" style="stop-color:#4e96cc"/></linearGradient></defs><path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g2a)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g2b)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/></svg>
-          <span class="folder-label">Ajuste y Calibración de Equipos de Audio</span><span class="folder-desc">Fase, crossovers, filtros, delay y subwoofers</span>
+          <span class="folder-label">Ajuste y Calibración de Equipos de Audio</span>
         </button>
         <button class="folder-btn" onclick="openModal('fundamentos')">
           <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g3a" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#a8d8f0"/><stop offset="100%" style="stop-color:#6aafe0"/></linearGradient><linearGradient id="g3b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#88c4ec"/><stop offset="100%" style="stop-color:#4e96cc"/></linearGradient></defs><path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g3a)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g3b)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/></svg>
-          <span class="folder-label">Fundamentos y Física del Sonido</span><span class="folder-desc">Ondas, armónicos, vibraciones y desfases</span>
+          <span class="folder-label">Fundamentos y Física del Sonido</span>
         </button>
         <button class="folder-btn" onclick="openModal('djs')">
           <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g4a" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#a8d8f0"/><stop offset="100%" style="stop-color:#6aafe0"/></linearGradient><linearGradient id="g4b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#88c4ec"/><stop offset="100%" style="stop-color:#4e96cc"/></linearGradient></defs><path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g4a)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g4b)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/></svg>
-          <span class="folder-label">Herramientas para DJ's<span class="folder-desc">Rueda de Camelot, transposición y asistente de vinilo</span>
+          <span class="folder-label">Herramientas para DJ's
         </button>
         <button class="folder-btn" onclick="openModal('instalaciones')">
           <svg class="folder-icon" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g5a" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#a8d8f0"/><stop offset="100%" style="stop-color:#6aafe0"/></linearGradient><linearGradient id="g5b" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#88c4ec"/><stop offset="100%" style="stop-color:#4e96cc"/></linearGradient></defs><path d="M5 32 Q5 26 11 26 L44 26 Q48 26 50 22 L56 14 Q58 10 63 10 L109 10 Q115 10 115 16 L115 32 Z" fill="url(#g5a)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="url(#g5b)" stroke="#4080b0" stroke-width="1.5"/><rect x="5" y="30" width="110" height="64" rx="7" fill="rgba(255,255,255,0.13)"/></svg>
-          <span class="folder-label">Instalaciones de Equipos de Sonido</span><span class="folder-desc">Cálculos de potencia para amplificadores</span>
+          <span class="folder-label">Instalaciones de Equipos de Sonido</span>
         </button>
       </div>
     </div>
@@ -106,6 +105,22 @@
     document.getElementById('yr').textContent = new Date().getFullYear();
     const BASE = 'https://guil-collab.github.io/web-guilteach';
     
+    
+    const DISPLAY_NAMES = {
+      'curva de fase I': 'Curva de Fase I',
+      'Curva de Fase II': 'Curva de Fase II',
+      'Atomo y Movimiendo armónico Simple': 'Átomo y Movimiento Armónico Simple',
+      'Atomos y Onda I': 'Átomos y Onda — Parte I',
+      'Atomos y Onda II': 'Átomos y Onda — Parte II',
+      'Fase y Grados ': 'Fase y Grados',
+      'Onda 2 Armónicos': 'Onda con 2 Armónicos',
+      'Onda 3 Armónicos': 'Onda con 3 Armónicos',
+      'Ordenes de Filtros': 'Órdenes de Filtros',
+      'Suma de dos Fuentes identicas': 'Suma de dos Fuentes Idénticas',
+      'Calculadora Transpocción de Samples': 'Calculadora de Transposición de Samples',
+      'Asistente para Pinchar Con Vinilo': 'Asistente para Pinchar con Vinilo',
+      'Ejercicios de Amplificar de Potencia': 'Cálculos de Amplificación de Potencia',
+    };
     const DESCS = {
       'Curvas NC y NR': 'Evalúa el ruido de fondo de un espacio',
       'Modos de Resonancia': 'Frecuencias resonantes de una sala rectangular',
@@ -142,7 +157,7 @@
       document.getElementById('modalTitle').textContent=cat.label;
       document.getElementById('toolList').innerHTML=cat.tools.map(t=>{
         const url=BASE+'/'+encodeURIComponent(cat.folder)+'/'+encodeURIComponent(t)+'.html';
-        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">'+t+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
+        const d=DESCS[t]||''; return '<li class="tool-item"><a href="'+url+'" target="_self"><div class="tool-info"><span class="tool-name">+(DISPLAY_NAMES[t]||t)+'</span>'+(d?'<span class="tool-desc">'+d+'</span>':'')+'</div><span class="arrow">↗</span></a></li>';
       }).join('');
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow='hidden';
